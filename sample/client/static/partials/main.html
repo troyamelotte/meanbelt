@@ -1,0 +1,31 @@
+<div ng-controller='questionController'>
+<button ng-click='logout()'>Logout</button>
+  <h3>Hi {{user}}!</h3>
+  <a href="#/new_question">Add a question</a><br>
+  <input placeholder="filter..." type="text" ng-model="questionFilter">
+  <table>
+    <tr>
+      <th>
+        Question
+      </th>
+      <th>
+        Answers
+      </th>
+      <th>
+        Action
+      </th>
+    </tr>
+    <tr ng-repeat="question in allquestions |orderBy:'-created_at'| filter:questionFilter track by $index">
+      <td>
+        {{question.question}}
+      </td>
+      <td>
+        {{question.answers.length}}
+      </td>
+      <td>
+        <a href="#/show/{{question._id}}">Show</a>
+        <a href="#/answer/{{question._id}}">Answer</a>
+      </td>
+    </tr>
+  </table>
+</div>

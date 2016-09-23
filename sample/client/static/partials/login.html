@@ -1,0 +1,27 @@
+<div ng-controller='userController'>
+
+<h3>LOGIN</h3>
+<form>
+  Name:<br>
+  <input type="text" name="Nane" ng-model="log.name" value=""><br>
+  Password:<br>
+  <input type="password" name="password" ng-model="log.password" value=""><br>
+  <button type="button" name="button" ng-click="login(log)">Login</button>
+</form>
+<div class="" ng-repeat="error in loginerrors">
+  {{error}}
+</div>
+<h3>REGISTER</h3>
+<form>
+  Name:<br>
+  <input type="text" name="email" ng-model="newUser.name" value=""><br>
+  Password:<br>
+  <input type="password" name="password" ng-model="newUser.password" value=""><br>
+  Confirm Password:<br>
+  <input type="password" name="confpass" ng-model="newUser.confpass" value=""><br>
+  <button type="button" name="button" ng-click="register(newUser)">Register</button>
+</form>
+  <div class="" ng-repeat="error in errors">
+    {{error}}
+  </div>
+</div>

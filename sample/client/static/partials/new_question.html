@@ -1,0 +1,15 @@
+<div ng-controller='questionController'>
+  <a href="#/main">Home</a>
+  <button ng-click='logout()'>Logout</button>
+  <h3>New Question</h3>
+  <form>
+    Question: <input type="text" name="question" ng-model="question.question"value="">
+    Description (optional):
+    <input type="text" name="desc" ng-model="question.description"value="">
+    <button type="button" name="button" ng-click="cancel()">Cancel</button>
+    <button type="button" name="button" ng-click='newquestion(question)'>Submit</button>
+  </form>
+  <p ng-repeat="error in errors">
+    {{error}}
+  </p>
+</div>

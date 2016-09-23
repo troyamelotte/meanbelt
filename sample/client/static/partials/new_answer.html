@@ -1,0 +1,16 @@
+<div ng-controller='questionController' ng-init='getquestion()'>
+  <a href="#/main">Home</a>
+  <a href="#/show/{{currentquestion._id}}">Back to Question</a>
+  <button ng-click='logout()'>Logout</button>
+  <h2>{{currentquestion.question}}</h2>
+  <h3>{{currentquestion.description}}</h3>
+  <form>
+    Your Answer: <input type="text" name="answer" ng-model='newanswer.answer'value="">
+    Supporting details (optional): <input type="text" name="support" ng-model='newanswer.details'value="">
+    <button type="button" name="button" ng-click="cancelanswer()">Cancel</button>
+    <button type="button" name="button" ng-click="createanswer(newanswer)">Submit</button>
+  </form>
+  <p ng-repeat="error in answererrors">
+    {{error}}
+  </p>
+</div>
